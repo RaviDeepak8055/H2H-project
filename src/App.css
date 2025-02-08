@@ -1,14 +1,5 @@
 @import './responsive.css';
 
-.app {
-  min-height: 100vh;
-  width: 100%;
-  background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
 /* Ensure full-width layout */
 body, html {
   margin: 0;
@@ -20,9 +11,19 @@ body, html {
   font-family: "Inter", sans-serif;
 }
 
+/* Apply styles globally */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
+}
+
+.app {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
