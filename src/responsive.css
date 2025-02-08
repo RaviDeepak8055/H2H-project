@@ -1,0 +1,64 @@
+/* Global Styles for Responsiveness */
+* {
+  box-sizing: border-box;
+}
+
+/* Navbar Responsive */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  .navbar {
+    padding: 1rem;
+  }
+}
+
+/* Hero Responsive */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  .hero-content {
+    flex-direction: row;
+    text-align: left;
+  }
+}
+
+/* AddHome Responsive */
+@media (max-width: 768px) {
+  .add-home-form {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .add-home-form {
+    max-width: 400px;
+  }
+}
