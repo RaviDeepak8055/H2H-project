@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import "./AddHome.css";
 
 export default function AddHome() {
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -134,45 +135,18 @@ export default function AddHome() {
             <label style={{ fontWeight: "bold", fontSize: "1.2rem", display: "block", marginBottom: "0.3rem" }}>
               Needs Food:
             </label>
-            <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-              <span>No</span>
-              <label style={{ position: "relative", display: "inline-block", width: "35px", height: "18px" }}>
-                <input
-                  type="checkbox"
-                  checked={needsFood}
-                  onChange={() => setNeedsFood(!needsFood)}
-                  style={{ opacity: 0, width: 0, height: 0 }}
-                />
-                <span
-                  style={{
-                    position: "absolute",
-                    cursor: "pointer",
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    bottom: 0,
-                    backgroundColor: needsFood ? "green" : "red",
-                    transition: ".4s",
-                    borderRadius: "20px",
-                  }}
-                />
-                <span
-                  style={{
-                    position: "absolute",
-                    height: "14px",
-                    width: "14px",
-                    borderRadius: "50%",
-                    backgroundColor: "white",
-                    top: "2px",
-                    left: needsFood ? "18px" : "2px",
-                    transition: ".4s",
-                  }}
-                />
-              </label>
-              <span>Yes</span>
+            <div className="toggle-container" style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+              <span style={{ fontSize: "1rem", fontWeight: "bold" }}>No</span>
+              <input
+                type="checkbox"
+                id="checkboxInput"
+                checked={needsFood}
+                onChange={() => setNeedsFood(!needsFood)}
+              />
+              <label htmlFor="checkboxInput" className="toggleSwitch"></label>
+              <span style={{ fontSize: "1rem", fontWeight: "bold" }}>Yes</span>
             </div>
           </div>
-
           <div>
             <label style={{ fontWeight: "bold", fontSize: "1.2rem", display: "block", marginBottom: "0.3rem" }}>
               Upload Home Image:
@@ -188,25 +162,12 @@ export default function AddHome() {
               }}
             />
           </div>
-
-          <motion.button
-            style={{
-              width: "100%",
-              background: "rgb(45, 179, 74)",
-              color: "white",
-              padding: "0.8rem", // Reduced padding
-              borderRadius: "6px",
-              fontSize: "1.1rem", // Reduced font size
-              fontWeight: "bold",
-              cursor: "pointer",
-              marginTop: "0.8rem",
-            }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            Add Home
-          </motion.button>
+          <button className="add-home-button">
+  Add Home
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M5 12h14M12 5l7 7-7 7" />
+  </svg>
+</button>
         </motion.form>
       </motion.div>
     </motion.div>

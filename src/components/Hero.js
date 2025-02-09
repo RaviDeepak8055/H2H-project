@@ -12,7 +12,6 @@ function Hero() {
       transition={{ duration: 1 }}
     >
       <div className="hero-content">
-        
         {/* Text Section */}
         <motion.div 
           className="hero-text"
@@ -20,12 +19,26 @@ function Hero() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
         >
-          <h1>HandToHand</h1>
+          <h1 style={{ fontSize: '5rem', textAlign: 'center', position: 'relative', display: 'inline-block' }}>
+  HandToHand
+  <motion.span 
+    style={{
+      display: 'block',
+      width: '150px',
+      height: '8px',
+      background: 'white',
+      marginTop: '10px',
+      borderRadius: '4px'
+    }}
+    initial={{ width: '100px' }}
+    animate={{ width: '390px' }}
+    transition={{ duration: 3, repeat: Infinity, repeatType: "reverse" }}
+  ></motion.span>
+</h1>
           <div className="taglines">
             <p>"Your small contribution can make a big difference."</p>
             <p>"Join us in feeding those who need it most."</p>
           </div>
-          
           {/* Buttons */}
           <div className="button-group">
             <motion.button 
@@ -36,7 +49,6 @@ function Hero() {
             >
               Get Started
             </motion.button>
-
             <Link to="/add-home" style={{ textDecoration: 'none' }}>
               <motion.button 
                 className="btn secondary"
@@ -50,7 +62,6 @@ function Hero() {
                 Add Your Home
               </motion.button>
             </Link>
-
             {/* Login to Update Home Button */}
             <motion.button 
               className="btn secondary"
@@ -65,7 +76,6 @@ function Hero() {
             </motion.button>
           </div>
         </motion.div>
-
         {/* Image Section */}
         <motion.div 
           className="hero-image"
@@ -78,9 +88,7 @@ function Hero() {
             alt="Children gathering around food"
           />
         </motion.div>
-
       </div>
-
       {/* Mission Statement */}
       <motion.div 
         className="mission-statement"
@@ -90,7 +98,6 @@ function Hero() {
       >
         <p>Making a difference in communities worldwide through sustainable food programs</p>
       </motion.div>
-
     </motion.div>
   );
 }

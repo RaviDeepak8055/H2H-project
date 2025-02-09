@@ -6,7 +6,9 @@ body, html {
   padding: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden; /* Completely disables scrolling */
+  /*overflow: hidden; /* Completely disables scrolling */
+  overflow-x: hidden;
+  overflow-y: auto;
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
 }

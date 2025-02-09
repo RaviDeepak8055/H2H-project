@@ -1,0 +1,74 @@
+#checkboxInput {
+    display: none;
+  }
+  
+  .toggleSwitch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 50px;
+    height: 25px;
+    background-color: rgba(223, 52, 52, 0.856);
+    border-radius: 20px;
+    cursor: pointer;
+    transition-duration: 0.2s;
+  }
+  
+  .toggleSwitch::after {
+    content: "";
+    position: absolute;
+    height: 9.5px;
+    width: 9.5px;
+    left: 5px;
+    background-color: transparent;
+    border-radius: 50%;
+    transition-duration: 0.2s;
+    box-shadow: 5px 2px 7px rgba(8, 8, 8, 0.26);
+    border: 5px solid white;
+  }
+  
+  #checkboxInput:checked + .toggleSwitch::after {
+    transform: translateX(100%);
+    transition-duration: 0.2s;
+    background-color: rgba(66, 223, 52, 0.856);
+  }
+  
+  #checkboxInput:checked + .toggleSwitch {
+    background-color: rgba(23, 221, 16, 0.945);
+    transition-duration: 0.2s;
+    
+  }
+
+  /* Stylish Add Home Button */
+  .add-home-button {
+    cursor: pointer;
+    font-weight: 700;
+    transition: all 0.2s;
+    padding: 8px 100px; /* Reduced padding */
+    border-radius: 50px; /* Adjusted border-radius */
+    background: #915bcfa6; /* New color: Blue */
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px; /* Reduced font size */
+  }
+
+  .add-home-button:hover {
+    background: #7f2cc4c2; /* Darker blue on hover */
+  }
+
+  .add-home-button > svg {
+    width: 24px; /* Reduced icon size */
+    margin-left: 8px;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .add-home-button:hover svg {
+    transform: translateX(4px);
+  }
+
+  .add-home-button:active {
+    transform: scale(0.95);
+  }
