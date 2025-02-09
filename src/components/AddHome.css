@@ -1,7 +1,15 @@
 #checkboxInput {
     display: none;
   }
-  
+  .addhome-form {
+    width: 80%;  /* Adjust the width of the form */
+    max-width: 900px;  /* Limit the max width to avoid it stretching too wide on large screens */
+    margin: 0 auto;  /* Center the form */
+    padding: 3rem;  /* Add padding inside the form to increase space */
+    font-size: 1.2rem;  /* Increase the font size for better readability */
+    border-radius: 10px;  /* Optional: Rounded corners for the form */
+    background-color: #f8f8f8;  /* Optional: Background color */
+}  
   .toggleSwitch {
     display: flex;
     align-items: center;

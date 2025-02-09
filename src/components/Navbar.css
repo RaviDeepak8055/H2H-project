@@ -90,3 +90,16 @@
     display: flex;
   }
 }
+body {
+  padding-top: 70px; /* Adjust based on your navbar height */
+}
+
+@media (max-width: 1024px) {
+  .navbar {
+    height: 80px; /* Slightly larger navbar for mobile */
+  }
+
+  .nav-brand {
+    font-size: 1.5rem; /* Adjust font size */
+  }
+}

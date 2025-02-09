@@ -117,7 +117,7 @@
 
 .hero-image img {
   width: 100%;
-  max-width: 800px;
+  max-width: 100px;
   border-radius: 16px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
@@ -127,43 +127,21 @@
   transform: translateY(-5px);
 }
 
-/* Floating Icons */
-.floating-icon {
-  position: absolute;
-  width: 60px;
-  height: 60px;
-  opacity: 0.5;
-  animation: float 3s infinite alternate;
-}
-
-@keyframes float {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-20px); }
-}
-
-.floating-icon:nth-child(1) {
-  top: 15%;
-  left: 10%;
-}
-
-.floating-icon:nth-child(2) {
-  bottom: 15%;
-  right: 10%;
-}
-
 /* Mission Statement */
 .mission-statement {
   font-size: 1.6rem;
   font-weight: bold;
   margin-top: 2rem;
   opacity: 0.9;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  text-shadow: 1px 1px 3px rgba(255, 0, 0, 0.2);
 }
 
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
   .hero {
-    padding-top: 8rem; /* Increase space on smaller screens */
+    padding-top:25rem; /* Increase space on smaller screens */
+    margin-top: 90px; /* Push content below the fixed navbar */
+    padding-bottom:28rem;;
   }
 
   .hero-content {
@@ -178,20 +156,20 @@
   }
 
   .hero-text h1 {
-    font-size: 3rem;
+    font-size: 5rem;
   }
   
   .taglines p {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 
   .mission-statement {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 
   .hero-image {
     max-width: 75%;
-    margin-top: 20px; /* Ensure image is below text */
+    /*margin-top: 1px; /* Ensure image is below text */
   }
 
   .button-group {
