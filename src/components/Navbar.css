@@ -4,9 +4,6 @@
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 2.5rem;
-  background: rgba(255, 255, 255, 0.1);
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
   height: 70px;
   position: fixed;
   top: 0;
@@ -14,6 +11,12 @@
   width: 100%;
   z-index: 1000;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to right, #ff758c, #ff7eb3);
+  transition: background 0.5s ease-in-out;
+}
+/* Ensure the AddHome page gets a new background */
+.navbar.add-home-bg {
+  background: linear-gradient(to right, #007bff, #6610f2) !important;
 }
 
 /* Logo and Brand */
@@ -51,4 +54,39 @@
 
 .nav-links a:hover {
   opacity: 0.8;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger div {
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 1rem 0;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
 }

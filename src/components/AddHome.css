@@ -72,3 +72,15 @@
   .add-home-button:active {
     transform: scale(0.95);
   }
+  @media (max-width: 768px) {
+    .add-home-container {
+      width: 90%;
+      max-width: 100%;
+      padding: 1rem;
+    }
+  
+    .add-home-button {
+      padding: 10px 50px;
+    }
+  }
+  

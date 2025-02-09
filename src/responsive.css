@@ -6,7 +6,6 @@
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 2.5rem;
-  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   height: 70px;
   position: fixed;
@@ -15,16 +14,25 @@
   width: 100%;
   z-index: 1000;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /*background: linear-gradient(to right, #ff758c, #ff7eb3) !important; /* Default Home Page Navbar Color */
+}
+
+/* Navbar Background Change for 'Add Your Home' */
+.add-home-active .navbar {
+  background: linear-gradient(to right, #50b1b1, #53a160) !important; /* Match Add Home Page */
 }
 
 .nav-links {
   display: flex;
   gap: 2rem;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
 }
 
 .nav-links a {
   font-size: 1.4rem;
-  color: white;
+  color: white !important;
   text-decoration: none;
   font-weight: 500;
   padding: 0.5rem 1rem;
@@ -50,12 +58,11 @@
   transition: 0.3s;
 }
 
-/* Mobile-Only Styles (Below 768px) */
-@media (max-width: 768px) {
+/* Mobile-Only Styles (Below 1025px) */
+@media (max-width: 1024px) {
   .nav-links {
     display: none;
     flex-direction: column;
-    background: rgba(0, 0, 0, 0.9);
     position: absolute;
     top: 70px;
     right: 0;
@@ -67,6 +74,12 @@
   .nav-links.show {
     display: flex;
   }
+
+  /* Change Navbar Background for 'Add Your Home' Page */
+  .add-home-active .nav-links {
+    background: linear-gradient(to right, #50b1b1, #53a160) !important; /* Match Add Home Page */
+  }
+
   .hamburger {
     display: flex;
     position: absolute;
@@ -105,13 +118,20 @@
   .add-home-button {
     padding: 8px 50px;
   }
-  /* Enable scrolling for mobile */
+  
+  /* Ensure content starts after navbar */
   body {
-    overflow-y: auto;
+    padding-top: 80px; /* Push main content down below navbar */
+    overflow-y: auto !important; /* Enable scrolling on mobile */
+    background: linear-gradient(to right, #ff758c, #ff7eb3) !important; /* Default Home Page Background */
+  }
+
+  .add-home-active body {
+    background: linear-gradient(to right, #50b1b1, #53a160) !important; /* Change Background for Add Home Page */
   }
 }
 
-/* Desktop Layout (Above 1024px) - Fully Locked */
+/* Desktop Layout (Above 1025px) - Fully Locked */
 @media (min-width: 1025px) {
   .hero-content {
     display: flex;
@@ -138,6 +158,12 @@
   /* Keep scrolling disabled on PC */
   body {
     overflow: hidden;
+    padding-top: 0;
+    background: linear-gradient(to right, #ff758c, #ff7eb3) !important;
+  }
+
+  .add-home-active body {
+    background: linear-gradient(to right, #50b1b1, #53a160) !important; /* Change Background for Add Home Page */
   }
 }
 

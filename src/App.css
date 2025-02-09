@@ -1,12 +1,17 @@
 @import './responsive.css';
 
+/* Define Global Background Color Variable */
+/*:root {
+  --main-bg-color: #ff758c; /* Match Hero background color */
+  /*--main-bg-gradient: linear-gradient(to right, #ff758c, #ff7eb3); /* Match Hero background gradient
+}*/
+
 /* Ensure full-width layout */
 body, html {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
-  /*overflow: hidden; /* Completely disables scrolling */
   overflow-x: hidden;
   overflow-y: auto;
   box-sizing: border-box;
@@ -24,8 +29,19 @@ body, html {
 .app {
   min-height: 100vh;
   width: 100%;
-  background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%);
+  background: var(--main-bg-gradient) !important; /* Use global background color */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+/* Ensure Navbar Matches Hero Background */
+/*.navbar {
+  background: var(--main-bg-gradient) !important; /* Use Hero section gradient
+}*/
+
+.nav-links a {
+  color: white /*!important*/;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
 }

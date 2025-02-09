@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import "./AddHome.css";
 
+
 export default function AddHome() {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [needsFood, setNeedsFood] = useState(false);

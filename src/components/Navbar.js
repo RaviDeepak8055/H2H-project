@@ -1,24 +1,26 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom"; // Import useLocation
 import "./Navbar.css";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation(); // Get current path
 
+  // Effect to update navbar on route change
   useEffect(() => {
-    // Enable scrolling only on mobile
-    if (window.innerWidth < 1025) {
-      document.body.style.overflow = menuOpen ? "auto" : "hidden";
-    } else {
-      document.body.style.overflow = "hidden"; // Keep PC scrolling disabled
-    }
+    console.log("Route changed to:", location.pathname);
+  }, [location.pathname]); // Run effect whenever the path changes
 
-    return () => {
-      document.body.style.overflow = "auto"; // Reset scrolling when unmounted
-    };
-  }, [menuOpen]);
+  // Define background styles based on the page
+  const getNavbarStyle = () => {
+    if (location.pathname === "/add-home") {
+      return { background: "linear-gradient(to right, #FF8E9E, rgba(205, 139, 16, 0.73)" }; // Adjust color for AddHome page
+    }
+    return { background: "linear-gradient(to right, #ff758c, #ff7eb3)" }; // Default Hero page color
+  };
 
   return (
-    <nav className="navbar">
+    <nav className="navbar" style={getNavbarStyle()}>
       <div className="nav-brand">
         <img src="/assets/logo.png" alt="HandToHand Logo" className="logo" />
         <span>HandToHand</span>
@@ -31,8 +33,8 @@ function Navbar() {
       </div>
 
       <div className={`nav-links ${menuOpen ? "show" : ""}`}>
-        <a href="#about">About</a>
-        <a href="#programs">Programs</a>
+        <a href="/">Home</a>
+        <a href="/add-home">Add Home</a>
         <a href="#contact">Contact</a>
       </div>
     </nav>
