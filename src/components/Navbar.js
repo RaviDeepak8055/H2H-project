@@ -33,8 +33,8 @@ function Navbar() {
       </div>
 
       <div className={`nav-links ${menuOpen ? "show" : ""}`}>
-        <a href="/">Home</a>
-        <a href="/add-home">Add Home</a>
+        <a href="/add-home">Top Donars</a>
+        <a href="/">About</a>
         <a href="#contact">Contact</a>
       </div>
     </nav>

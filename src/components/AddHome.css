@@ -1,55 +1,46 @@
 #checkboxInput {
     display: none;
-  }
-  .addhome-form {
-    width: 80%;  /* Adjust the width of the form */
-    max-width: 900px;  /* Limit the max width to avoid it stretching too wide on large screens */
-    margin: 0 auto;  /* Center the form */
-    padding: 3rem;  /* Add padding inside the form to increase space */
-    font-size: 1.2rem;  /* Increase the font size for better readability */
-    border-radius: 10px;  /* Optional: Rounded corners for the form */
-    background-color: #f8f8f8;  /* Optional: Background color */
-}  
-  .toggleSwitch {
+}
+
+.toggleSwitch {
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     width: 50px;
-    height: 25px;
+    height: 27px;
     background-color: rgba(223, 52, 52, 0.856);
     border-radius: 20px;
     cursor: pointer;
     transition-duration: 0.2s;
-  }
-  
-  .toggleSwitch::after {
+}
+
+.toggleSwitch::after {
     content: "";
     position: absolute;
     height: 9.5px;
-    width: 9.5px;
+    width: 10px;
     left: 5px;
     background-color: transparent;
     border-radius: 50%;
     transition-duration: 0.2s;
     box-shadow: 5px 2px 7px rgba(8, 8, 8, 0.26);
     border: 5px solid white;
-  }
-  
-  #checkboxInput:checked + .toggleSwitch::after {
+}
+
+#checkboxInput:checked + .toggleSwitch::after {
     transform: translateX(100%);
     transition-duration: 0.2s;
     background-color: rgba(66, 223, 52, 0.856);
-  }
-  
-  #checkboxInput:checked + .toggleSwitch {
+}
+
+#checkboxInput:checked + .toggleSwitch {
     background-color: rgba(23, 221, 16, 0.945);
     transition-duration: 0.2s;
-    
-  }
+}
 
-  /* Stylish Add Home Button */
-  .add-home-button {
+/* Stylish Add Home Button */
+.add-home-button {
     cursor: pointer;
     font-weight: 700;
     transition: all 0.2s;
@@ -61,34 +52,122 @@
     align-items: center;
     justify-content: center;
     font-size: 15px; /* Reduced font size */
-  }
+}
 
-  .add-home-button:hover {
+.add-home-button:hover {
     background: #7f2cc4c2; /* Darker blue on hover */
-  }
+}
 
-  .add-home-button > svg {
+.add-home-button > svg {
     width: 24px; /* Reduced icon size */
     margin-left: 8px;
     transition: transform 0.3s ease-in-out;
-  }
+}
 
-  .add-home-button:hover svg {
+.add-home-button:hover svg {
     transform: translateX(4px);
-  }
+}
 
-  .add-home-button:active {
+.add-home-button:active {
     transform: scale(0.95);
-  }
-  @media (max-width: 768px) {
+}
+.add-home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ensures it fills the entire screen */
+    overflow: hidden; /* Prevent overflow */
+}
+
+/* Ensure full page scrolls, not the form */
+@media (max-width: 1024px) {
+    html, body {
+      height: auto;
+      min-height: 100vh;
+      overflow-x: hidden;
+      overflow-y: auto !important;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  
+    /* Hide scrollbar */
+    body::-webkit-scrollbar {
+      display: none;
+    }
+  
+    /* Make sure the entire page scrolls, not the form */
     .add-home-container {
-      width: 90%;
-      max-width: 100%;
-      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      width: 100%;
+      overflow: auto;
+      overflow-y: auto; /* Ensure scrolling works */
+    }
+
+    /* Ensure the form container can grow */
+    .form-container {
+      width: 100%;
+      max-width: 500px;
+      padding: 2rem;
+      background: linear-gradient(135deg, #FFD3A5, #FD6585);
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
   
-    .add-home-button {
-      padding: 10px 50px;
+    /* Prevent form itself from scrolling */
+    .add-home-form-container {
+      max-height: 80vh !important;
+      overflow-y: auto !important;
     }
   }
   
+   
+  @media (max-width: 768px) {
+    .motion-div-container {
+        flex-direction: column;
+        height: auto;
+        padding: 2rem 1rem;
+    }
+    
+    .form-container {
+        width: 95%;
+        max-height: none;
+        overflow-y: visible;
+    }
+}
+
+/* Adjustments for form and wrapper to prevent overflow */
+.motion-div-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, #FF8E9E, rgba(205, 139, 16, 0.73));
+    padding: 4rem 2rem; /* Adjust the padding to reduce gaps */
+    overflow: auto;
+    box-sizing: border-box;
+}
+
+.form-container {
+    background: linear-gradient(135deg, #FFD3A5, #FD6585);
+    padding: 2rem; /* Reduce padding for more space */
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 500px;
+    height: auto; /* Remove fixed height to allow content to adjust */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Adjusted for balanced spacing */
+    max-height: calc(100vh - 16rem); /* Adjust to prevent overflow */
+    overflow-y: auto; /* Allows scrolling inside the form if needed */
+}

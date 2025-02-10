@@ -2,7 +2,6 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import "./AddHome.css";
 
-
 export default function AddHome() {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [needsFood, setNeedsFood] = useState(false);
@@ -17,14 +16,15 @@ export default function AddHome() {
 
   return (
     <motion.div
+    //className="add-home-container"
       style={{
-        minHeight: "100vh",
+        height: "100vh",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         background: "linear-gradient(to right, #FF8E9E, rgba(205, 139, 16, 0.73))",
-        padding: "5.54rem 1rem", // Reduced padding
-        overflow: "hidden",
+        paddingTop: "4rem", // Push content down below navbar
+        overflow: "visible", // Allow full-page scrolling
         boxSizing: "border-box",
       }}
       initial={{ opacity: 0 }}
@@ -34,13 +34,13 @@ export default function AddHome() {
       <motion.div
         style={{
           background: "linear-gradient(135deg, #FFD3A5, #FD6585)",
-          padding: "1.5rem", // Reduced padding
+          padding: "1.8rem",
           borderRadius: "15px",
-          boxShadow: "0 5px 10px rgba(0, 0, 0, 0.2)",
-          width: "85%",
-          maxWidth: "400px", // Reduced width
-          height: "auto",
-          transform: "scale(0.9)", // Shrinks the entire form
+          boxShadow: "0 5px 15px rgba(0, 0, 0, 0.2)",
+          width: "100%",
+          maxWidth: "450px",
+          maxHeight: "calc(100vh - 6rem)", // Prevents going beyond viewport
+          overflowY: "visible", // Ensure form itself doesn'tscroll
         }}
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
@@ -48,10 +48,10 @@ export default function AddHome() {
       >
         <motion.h1
           style={{
-            color: "rgba(141, 136, 136, 0.86)",
-            fontSize: "2rem", // Reduced font size
+            color: "rgba(153, 55, 55, 0.88)",
+            fontSize: "2.2rem",
             fontWeight: "bold",
-            marginBottom: "0.8rem",
+            marginBottom: "1rem",
             textAlign: "center",
           }}
           initial={{ y: -20, opacity: 0 }}
@@ -66,19 +66,27 @@ export default function AddHome() {
             display: "flex",
             flexDirection: "column",
             gap: "0.8rem",
+            flexGrow: 1, // Allows form to expand without causing scroll issues
           }}
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          {[
+          {[ 
             { label: "Home Name", type: "text", placeholder: "Enter home name" },
             { label: "Address", type: "text", placeholder: "Enter address" },
             { label: "City", type: "text", placeholder: "Enter city" },
             { label: "Phone Number", type: "text", placeholder: "Enter phone number", onInput: handlePhoneInput, maxLength: 10 },
           ].map((field, index) => (
             <div key={index}>
-              <label style={{ fontWeight: "bold", fontSize: "1.2rem", display: "block", marginBottom: "0.3rem" }}>
+              <label
+                style={{
+                  fontWeight: "bold",
+                  fontSize: "1.3rem",
+                  display: "block",
+                  marginBottom: "0.2rem",
+                }}
+              >
                 {field.label}:
               </label>
               <input
@@ -88,17 +96,24 @@ export default function AddHome() {
                 maxLength={field.maxLength}
                 style={{
                   width: "100%",
-                  padding: "0.6rem", // Reduced padding
-                  borderRadius: "6px", // Slightly smaller
+                  padding: "1rem",
+                  borderRadius: "8px",
                   border: "1px solid gray",
-                  fontSize: "0.9rem", // Reduced font size
+                  fontSize: "1.1rem",
                 }}
               />
             </div>
           ))}
 
           <div>
-            <label style={{ fontWeight: "bold", fontSize: "1.2rem", display: "block", marginBottom: "0.3rem" }}>
+            <label
+              style={{
+                fontWeight: "bold",
+                fontSize: "1.3rem",
+                display: "block",
+                marginBottom: "0.5rem",
+              }}
+            >
               Password:
             </label>
             <div style={{ position: "relative" }}>
@@ -107,10 +122,10 @@ export default function AddHome() {
                 placeholder="Enter password"
                 style={{
                   width: "100%",
-                  padding: "0.6rem",
-                  borderRadius: "6px",
+                  padding: "1rem",
+                  borderRadius: "8px",
                   border: "1px solid gray",
-                  fontSize: "0.9rem",
+                  fontSize: "1.1rem",
                 }}
               />
               <button
@@ -124,7 +139,7 @@ export default function AddHome() {
                   background: "none",
                   border: "none",
                   cursor: "pointer",
-                  fontSize: "1rem",
+                  fontSize: "1.6rem",
                 }}
               >
                 {passwordVisible ? "👀" : "🙈"}
@@ -133,11 +148,18 @@ export default function AddHome() {
           </div>
 
           <div>
-            <label style={{ fontWeight: "bold", fontSize: "1.2rem", display: "block", marginBottom: "0.3rem" }}>
+            <label
+              style={{
+                fontWeight: "bold",
+                fontSize: "1.3rem",
+                display: "block",
+                marginBottom: "0.5rem",
+              }}
+            >
               Needs Food:
             </label>
-            <div className="toggle-container" style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-              <span style={{ fontSize: "1rem", fontWeight: "bold" }}>No</span>
+            <div className="toggle-container" style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+              <span style={{ fontSize: "1.1rem", fontWeight: "bold" }}>No</span>
               <input
                 type="checkbox"
                 id="checkboxInput"
@@ -145,30 +167,39 @@ export default function AddHome() {
                 onChange={() => setNeedsFood(!needsFood)}
               />
               <label htmlFor="checkboxInput" className="toggleSwitch"></label>
-              <span style={{ fontSize: "1rem", fontWeight: "bold" }}>Yes</span>
+              <span style={{ fontSize: "1.1rem", fontWeight: "bold" }}>Yes</span>
             </div>
           </div>
+
           <div>
-            <label style={{ fontWeight: "bold", fontSize: "1.2rem", display: "block", marginBottom: "0.3rem" }}>
+            <label
+              style={{
+                fontWeight: "bold",
+                fontSize: "1.3rem",
+                display: "block",
+                marginBottom: "0.5rem",
+              }}
+            >
               Upload Home Image:
             </label>
             <input
               type="file"
               style={{
                 width: "100%",
-                padding: "0.6rem",
-                borderRadius: "6px",
+                padding: "1rem",
+                borderRadius: "8px",
                 border: "1px solid gray",
-                fontSize: "0.9rem",
+                fontSize: "1.1rem",
               }}
             />
           </div>
-          <button className="add-home-button">
-  Add Home
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M5 12h14M12 5l7 7-7 7" />
-  </svg>
-</button>
+
+          <button className="add-home-button" style={{ fontSize: "1.1rem", fontWeight: "bold", padding: "15px 35px" }}>
+            Add Home
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </button>
         </motion.form>
       </motion.div>
     </motion.div>
