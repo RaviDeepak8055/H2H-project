@@ -1,11 +1,5 @@
 @import './responsive.css';
 
-/* Define Global Background Color Variable */
-/*:root {
-  --main-bg-color: #ff758c; /* Match Hero background color */
-  /*--main-bg-gradient: linear-gradient(to right, #ff758c, #ff7eb3); /* Match Hero background gradient
-}*/
-
 /* Ensure full-width layout */
 body, html {
   margin: 0;

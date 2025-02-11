@@ -10,7 +10,6 @@
   padding: 6rem 2rem;
   background: linear-gradient(to right, #ff758c, #ff7eb3);
   color: white;
-  text-align: center;
   position: relative;
 }
 
@@ -23,7 +22,7 @@
   max-width: 1400px;
   gap: 3rem;
   flex-direction: row;
-  text-align: left;
+  /*text-align: left;*/
 }
 
 .hero-text{
@@ -31,18 +30,18 @@
 }
 
 .hero-text h1 {
-  flex: 1;
-  font-size: 6rem;
+  font-size: 7rem;
   font-weight: bold;
-  margin-bottom: 1.5rem;
+  /*margin-bottom: 2rem;*/
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   position: relative;
-  left: 130px; /* Moves text to the right */
+  padding-left: 1px; /* Moves text to the right */
+  margin-top: -100px;
 }
 
 .underline {
   display: block;
-  width: 150px;
+  width: 100%;
   height: 8px;
   background: white;
   margin-top: 5px;
@@ -51,13 +50,15 @@
 
 /* Taglines */
 .taglines {
-  font-size: 1.7rem;
+  font-size: 32px;
   font-weight: bold;
   opacity: 0.9;
-  margin-top: 20px;
   text-align: center;
   position: relative;
-  left: 70px; /* Moves tagline to the left */
+  margin-top: 40px;
+  margin-left: -10px; /* Moves text to the left */
+  max-width: 100%; /* Adjust as needed */
+  white-space: normal; /* Ensures proper wrapping */
 }
 /*.taglines p {
   font-size: 1.7rem;
@@ -71,9 +72,9 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  margin-top: 30px;
+  margin-top: 40px;
   position: relative;
-  left: 80px; /* Moves buttons left */
+  padding-left: 1px; /* Moves buttons left */
 
 }
 
@@ -108,24 +109,27 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 50%;
+  /*max-width: 100%;*/
+  width: 1000px; /* Increase container width */
+  height: auto;
 }
 
 .hero-image img {
-  max-width: 700px;
-  border-radius: 16px;
+  width: 700px; /* Increase image width */
+  height: auto; /* Maintain aspect ratio */
+  max-width: none; /* Remove any width restriction */
+  border-radius: 50px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
   transform: translateY(-5px);
   position: relative;
-  right:10px; /* Moves buttons left */
-  top:35px;
+  top:-15px;
 }
 
 /* Mission Statement */
 .mission-statement {
   font-size: 2.1rem;
-  margin-top: 40px;
+  margin-top: 50px;
   opacity: 0.9;
 }
 

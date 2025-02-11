@@ -19,12 +19,12 @@ function Hero() {
           animate={{ opacity: 1, x: -40 }}
           transition={{ duration: 1, delay: 0.2 }}
         >
-          <h1 className="hero-text h1">
+          <h1 className="hero-text">
               HandToHand
               <motion.span 
                 className="underline"
                 initial={{ width: '100px' }}
-                animate={{ width: '586px' }}
+                animate={{ width: '685px' }}
                 transition={{ duration: 3, repeat: Infinity, repeatType: "reverse" }}
               ></motion.span>
           </h1>
