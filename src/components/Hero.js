@@ -14,27 +14,20 @@ function Hero() {
       <div className="hero-content">
         {/* Text Section */}
         <motion.div 
-          className="hero-text"
-          initial={{ opacity: 0, x: -50 }} 
-          animate={{ opacity: 1, x: 0 }}
+          className="hero-text h1"
+          initial={{ opacity: 0, x: -100 }} 
+          animate={{ opacity: 1, x: -40 }}
           transition={{ duration: 1, delay: 0.2 }}
         >
-          <h1 style={{ fontSize: '5rem', textAlign: 'center', position: 'relative', display: 'inline-block' }}>
-  HandToHand
-  <motion.span 
-    style={{
-      display: 'block',
-      width: '150px',
-      height: '8px',
-      background: 'white',
-      marginTop: '10px',
-      borderRadius: '4px'
-    }}
-    initial={{ width: '100px' }}
-    animate={{ width: '390px' }}
-    transition={{ duration: 3, repeat: Infinity, repeatType: "reverse" }}
-  ></motion.span>
-</h1>
+          <h1 className="hero-text h1">
+              HandToHand
+              <motion.span 
+                className="underline"
+                initial={{ width: '100px' }}
+                animate={{ width: '586px' }}
+                transition={{ duration: 3, repeat: Infinity, repeatType: "reverse" }}
+              ></motion.span>
+          </h1>
           <div className="taglines">
             <p>"Your small contribution can make a big difference."</p>
             <p>"Join us in feeding those who need it most."</p>
@@ -64,7 +57,7 @@ function Hero() {
             </Link>
             {/* Login to Update Home Button */}
             <motion.button 
-              className="btn secondary"
+              className="btn secondary login-btn"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.8 }}
@@ -80,13 +73,10 @@ function Hero() {
         <motion.div 
           className="hero-image"
           initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
+          animate={{ opacity: 1, x: 15 }}
           transition={{ duration: 1, delay: 0.3 }}
         >
-          <img
-            src="/assets/Donation.jpg"
-            alt="Children gathering around food"
-          />
+          <img src="/assets/Donation.jpg" alt="Children gathering around food" />
         </motion.div>
       </div>
       {/* Mission Statement */}

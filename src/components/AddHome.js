@@ -185,10 +185,10 @@ export default function AddHome() {
             <input
               type="file"
               style={{
-                width: "100%",
+                width: "66.12%",
                 padding: "1rem",
-                borderRadius: "8px",
-                border: "1px solid gray",
+                borderRadius: "40px",
+                border: "1px solid black",
                 fontSize: "1.1rem",
               }}
             />

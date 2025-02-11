@@ -18,7 +18,7 @@
 
 /* Navbar Background Change for 'Add Your Home' */
 .add-home-active .navbar {
-  background: linear-gradient(to right, #50b1b1, #53a160) !important; /* Match Add Home Page */
+  background: linear-gradient(to right, #50b1b1, #53a160) !important;
 }
 
 .nav-links {
@@ -57,7 +57,7 @@
   transition: 0.3s;
 }
 
-/* Mobile-Only Styles (Below 1025px) */
+/* Mobile & Tablet Styles (Below 1025px) */
 @media (max-width: 1024px) {
   .nav-links {
     display: none;
@@ -74,9 +74,8 @@
     display: flex;
   }
 
-  /* Change Navbar Background for 'Add Your Home' Page */
   .add-home-active .nav-links {
-    background: linear-gradient(to right, #50b1b1, #53a160) !important; /* Match Add Home Page */
+    background: linear-gradient(to right, #50b1b1, #53a160) !important;
   }
 
   .hamburger {
@@ -85,84 +84,92 @@
     top: 20px;
     right: 20px;
   }
-  .hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+
+  /* Updated Hero Section */
+  .hero {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
     text-align: center;
   }
+
+  .hero-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+  }
+
   .hero-text {
     width: 90%;
   }
+
   .hero-text h1 {
-    font-size: 2.2rem;
+    font-size: 3rem;
   }
+
+  .taglines p {
+    font-size: 1.5rem;
+  }
+
+  .button-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .hero-image {
+    width: 90%;
     display: flex;
     justify-content: center;
-    width: 100%;
   }
+
   .hero-image img {
-    max-width: 90%;
+    max-width: 100%;
   }
+
+  .mission-statement {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+  }
+
+  /* Adjust Add Home Form */
   .add-home-form {
     width: 100%;
     padding: 1rem;
   }
+
   .inputGroup input {
-    font-size: 0.9rem;
-    padding: 0.6rem;
+    font-size: 1rem;
+    padding: 0.8rem;
   }
+
   .add-home-button {
-    padding: 8px 50px;
+    padding: 12px 50px;
   }
-  
-  /* Ensure content starts after navbar */
+
   body {
-    padding-top: 80px; /* Push main content down below navbar */
-    overflow-y: auto !important; /* Enable scrolling on mobile */
-    background: linear-gradient(to right, #ff758c, #ff7eb3) !important; /* Default Home Page Background */
+    padding-top: 80px;
+    overflow-y: auto !important;
+    background: linear-gradient(to right, #ff758c, #ff7eb3) !important;
   }
 
   .add-home-active body {
-    background: linear-gradient(to right, #50b1b1, #53a160) !important; /* Change Background for Add Home Page */
+    background: linear-gradient(to right, #50b1b1, #53a160) !important;
   }
 }
 
-/* Desktop Layout (Above 1025px) - Fully Locked */
+/* Desktop Layout (Above 1025px)*/
 @media (min-width: 1025px) {
-  .hero-content {
-    display: flex;
-    flex-direction: row !important;
-    align-items: center;
-    justify-content: space-between;
-    text-align: left !important;
-  }
-  .hero-text {
-    max-width: 50%;
-  }
-  .hero-text h1 {
-    font-size: 4rem !important;
-  }
-  .hero-image {
-    max-width: 50%;
-  }
-  .hero-image img {
-    max-width: 100% !important;
-  }
+
   .add-home-form {
-    max-width: 400px !important;
+    max-width: 400px;
   }
-  /* Keep scrolling disabled on PC */
   body {
     overflow: hidden;
     padding-top: 0;
     background: linear-gradient(to right, #ff758c, #ff7eb3) !important;
   }
-
   .add-home-active body {
-    background: linear-gradient(to right, #50b1b1, #53a160) !important; /* Change Background for Add Home Page */
+    background: linear-gradient(to right, #50b1b1, #53a160) !important;
   }
 }
 
