@@ -13,7 +13,7 @@ body, html {
 }
 
 /* Apply styles globally */
-* {
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -23,16 +23,11 @@ body, html {
 .app {
   min-height: 100vh;
   width: 100%;
-  background: var(--main-bg-gradient) !important; /* Use global background color */
+  background: var(--main-bg-gradient);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-
-/* Ensure Navbar Matches Hero Background */
-/*.navbar {
-  background: var(--main-bg-gradient) !important; /* Use Hero section gradient
-}*/
 
 .nav-links a {
   color: white /*!important*/;

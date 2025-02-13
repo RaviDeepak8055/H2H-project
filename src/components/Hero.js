@@ -24,7 +24,7 @@ function Hero() {
               <motion.span 
                 className="underline"
                 initial={{ width: '100px' }}
-                animate={{ width: '685px' }}
+                animate={{ width: '444px' }}
                 transition={{ duration: 3, repeat: Infinity, repeatType: "reverse" }}
               ></motion.span>
           </h1>
